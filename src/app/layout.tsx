@@ -5,9 +5,9 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Login Register Flow | Frontend Hire',
+  title: 'Feature Flags',
   description:
-    'A Premium Course from Frontend Hire that teaches you how to build an end to end tested login register flow with Next.js, Playwright, and Supabase.',
+    'A Premium Course from Frontend Hire that teaches you how to build feature flags.',
 };
 
 export default function RootLayout({
