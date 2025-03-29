@@ -7,15 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from './ui/card';
-import { FeatureCardProps } from '@/lib/types';
+import { Feature } from '@/lib/types';
 import { Badge } from './ui/badge';
 
-const FeatureCard = ({
-  name,
-  displayName,
-  description,
-  index,
-}: FeatureCardProps) => {
+const FeatureCard = ({ name, displayName, description, index }: Feature) => {
   return (
     <Card>
       <CardHeader>

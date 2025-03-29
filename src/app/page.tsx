@@ -1,5 +1,5 @@
 import FeatureCard from '@/components/feature-card';
-import { features } from '@/lib/constants';
+import { FEATURES } from '@/lib/constants';
 
 export default function Home() {
   return (
@@ -9,17 +9,17 @@ export default function Home() {
           Feature Flag Dashboard
         </h1>
         <p className="mt-3 text-muted-foreground">
-          View and monitor the status of all enabled features
+          View and monitor the status of all enabled features.
         </p>
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {features.map(({ name, displayName, description }, idx) => (
+        {FEATURES.map(({ name, index, displayName, description }) => (
           <FeatureCard
-            key={idx}
+            key={name}
             displayName={displayName}
             description={description}
             name={name}
-            index={idx}
+            index={index}
           />
         ))}
       </div>
