@@ -15,7 +15,7 @@ const FeatureCard = ({ name, displayName, description, index }: Feature) => {
     <Card>
       <CardHeader>
         <span className="inline-flex items-center  rounded-full  text-xs font-medium">
-          <Badge variant="default" className="rounded-full">
+          <Badge variant="destructive" className="rounded-full">
             Enabled
           </Badge>
         </span>
@@ -26,8 +26,8 @@ const FeatureCard = ({ name, displayName, description, index }: Feature) => {
         <CardDescription>{description}</CardDescription>
       </CardContent>
 
-      <CardFooter>
-        <p className="text-sm text-muted-foreground">
+      <CardFooter className="border-t">
+        <p className="pt-3 text-sm text-muted-foreground/75">
           This feature is now active and visible to users.
         </p>
       </CardFooter>
