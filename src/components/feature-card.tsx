@@ -10,19 +10,18 @@ import {
 import { Feature } from '@/lib/types';
 import { Badge } from './ui/badge';
 
-const FeatureCard = ({ name, displayName, description, index }: Feature) => {
+const FeatureCard = ({ displayName, description, enabled }: Feature) => {
   return (
     <Card>
-      <CardHeader>
-        <span className="inline-flex items-center  rounded-full  text-xs font-medium">
-          <Badge variant="destructive" className="rounded-full">
-            Enabled
-          </Badge>
-        </span>
+      <CardHeader className="inline-flex">
+        <Badge variant="destructive" className="rounded-full">
+          {enabled && 'Enabled'}
+        </Badge>
       </CardHeader>
 
       <CardContent className="space-y-2">
         <CardTitle>{displayName}</CardTitle>
+
         <CardDescription>{description}</CardDescription>
       </CardContent>
 
