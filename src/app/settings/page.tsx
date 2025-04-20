@@ -1,10 +1,12 @@
+'use client';
 import Title from '@/components/title';
 import { Card } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
-import { FEATURES } from '@/lib/constants';
+import { useFeatureFlags } from '@/hooks/useFeatureFlags';
 import React from 'react';
 
 export default function Settings() {
+  const { features, toggleFeature } = useFeatureFlags();
   return (
     <section className="flex w-full flex-col bg-gradient-to-b from-background to-background/80 py-12 md:py-24 lg:py-32">
       <div className=" mx-auto w-full max-w-4xl  space-y-10">
@@ -16,7 +18,7 @@ export default function Settings() {
         </div>
         <div className="overflow-hidden rounded-2xl  bg-background shadow-sm">
           <div className="space-y-6 divide-y">
-            {FEATURES.map(({ name, displayName, description }) => (
+            {features.map(({ name, displayName, description, enabled }) => (
               <Card key={name} className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
@@ -27,8 +29,8 @@ export default function Settings() {
                   </div>
                   <div>
                     <Switch
-                      // checked={flags[feature.name] || false}
-                      // onCheckedChange={() => toggleFeature(feature.name)}
+                      checked={enabled || false}
+                      onCheckedChange={() => toggleFeature(name)}
                       className="data-[state=checked]:bg-primary"
                     />
                   </div>
